@@ -1,27 +1,16 @@
 <div class="container">
 <h2 class="text-center">Lista de tareas</h2>
-  <form (submit)="agregarTarea($event)">
-    <div class="mb-3">
-      <label for="tareaInput" class="form-label">Tarea</label>
-      <input type="text" class="form-control" id="tareaInput" (input)="onInputChange($event)" required>
-    </div>
-    <button type="submit" class="btn btn-primary">Agregar</button>
-  </form>
-
   <table class="table mt-4 table-overflow table-fixed">
     <thead>
       <tr>
         <th scope="col">Item</th>
         <th scope="col">Tarea</th>
-        <th scope="col">Eliminar</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let tarea of tareas; let i = index">
         <th scope="row">{{ i + 1 }}</th>
         <td class="text-nowrap">{{ tarea }}</td>
-        <td><button class="btn btn-danger" (click)="eliminarTarea(i)">Eliminar</button></td>
-      </tr>
     </tbody>
   </table>
 </div>
